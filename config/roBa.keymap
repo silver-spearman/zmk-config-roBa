@@ -80,10 +80,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W      &kp E     &kp R                            &kp T                                                                  &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&mt A LCTRL  &kp S      &kp D     &kp F                            &kp G                &msc MOVE_Y(10)                    &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp UNDERSCORE
-&kp Z        &kp X      &kp C     &kp V                            &mt B C_BLUE_BUTTON  &kp LWIN                           &kp INT_KANA   &kp N        &kp M  &kp COMMA  &kp DOT  &kp QUESTION
-&kp LSHFT    &kp LCTRL  &kp LALT  &lt_to_layer_0 6 LS(INT_HENKAN)  &lt 2 SPACE          &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp ESCAPE
+&kp Q        &kp W      &kp E     &kp R                 &kp T                                                                  &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&mt A LCTRL  &kp S      &kp D     &kp F                 &kp G                &msc MOVE_Y(10)                    &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp UNDERSCORE
+&kp Z        &kp X      &kp C     &kp V                 &mt B C_BLUE_BUTTON  &kp LWIN                           &kp INT_KANA   &kp N        &kp M  &kp COMMA  &kp DOT  &kp QUESTION
+&kp LSHFT    &kp LCTRL  &kp LALT  &lt 1 LS(INT_HENKAN)  &lt 2 SPACE          &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 6 ENTER                             &lt 4 ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -91,10 +91,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&trans  &kp N7        &kp N8        &kp N9        &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans  &kp N0        &trans        &trans        &trans  &trans      &trans   &trans                          &kp F12
             >;
         };
 
@@ -142,6 +142,15 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
