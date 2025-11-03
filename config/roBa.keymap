@@ -73,6 +73,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        backslash_pipe: backslash_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSLASH>, <&kp PIPE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
     };
 
     keymap {
