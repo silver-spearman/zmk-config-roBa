@@ -107,6 +107,14 @@
 
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
+
+        number2_dquote: backslash_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&kp JP_DQUOTE>;
+
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
     };
 
     keymap {
