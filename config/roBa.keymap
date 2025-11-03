@@ -57,11 +57,20 @@
     };
 
     behaviors {
+        // ¥キー単体 → バックスラッシュ (\)
+        macro_backslash: macro_backslash {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_BACKSLASH";
+            #binding-cells = <0>;
+            bindings = <&kp KEY_YEN>;  // Windowsでは KEY_YEN = ¥ = \
+        };
+
+        // Shift+¥ → パイプ (|)
         macro_pipe: macro_pipe {
             compatible = "zmk,behavior-macro";
-            label = "PIPE_MACRO";
+            label = "MACRO_PIPE";
             #binding-cells = <0>;
-            bindings = <&kp LS(KEY_YEN)>;
+            bindings = <&kp LS(KEY_YEN)>;  // Shift + ¥ = |
         };
     };
 
