@@ -101,19 +101,122 @@
             tapping-term-ms = <200>;
         };
 
+        // 2 / " （JP配列では Shift+2 が "）
+        number2_dquote: number2_dquote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&kp JP_DQUOTE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 6 / & （JP配列では Shift+6 が &）
+        number6_ampersand: number6_ampersand {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_6>, <&kp JP_AMPERSAND>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 7 / ' （JP配列では Shift+7 が '）
+        number7_quote: number7_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_7>, <&kp JP_QUOTE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 8 / ( （JP配列では Shift+8 が (）
+        number8_lparen: number8_lparen {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_8>, <&kp JP_LPAREN>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 9 / ) （JP配列では Shift+9 が )）
+        number9_rparen: number9_rparen {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_9>, <&kp JP_RPAREN>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 既存：US バックスラッシュ キーで ¥ / | を出す
         backslash_pipe: backslash_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSLASH>, <&kp JP_PIPE>;
-
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        number2_dquote: backslash_pipe {
+        // - / = （JP配列では Shift+Minus が =）
+        minus_equal: minus_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp NUMBER_2>, <&kp JP_DQUOTE>;
+            // 通常: - , Shift時: =
+            bindings = <&kp MINUS>, <&kp JP_EQUAL>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
 
+        // ^ / ~ （JP配列の「^/~」キー相当）
+        caret_tilde: caret_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            // 通常: ^ , Shift時: ~
+            bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // @ / ` （JP配列では @ と ` が同じキーに乗っている）
+        at_backquote: at_backquote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            // 通常: @ , Shift時: `
+            bindings = <&kp JP_AT>, <&kp JP_BACKQUOTE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // ; / + （JP配列では Shift+; が +）
+        semicolon_plus: semicolon_plus {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp JP_PLUS>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // : / * （JP配列の「:/*」キー相当）
+        colon_asterisk: colon_asterisk {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            // 通常: : , Shift時: *
+            bindings = <&kp JP_COLON>, <&kp JP_ASTERISK>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // [ / { （JP配列での [ / { のペア）
+        lbracket_lbrace: lbracket_lbrace {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            // 通常: [ , Shift時: {
+            bindings = <&kp JP_LBRACKET>, <&kp JP_LBRACE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // ] / } （JP配列での ] / } のペア）
+        rbracket_rbrace: rbracket_rbrace {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            // 通常: ] , Shift時: }
+            bindings = <&kp JP_RBRACKET>, <&kp JP_RBRACE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 必要なら、_ 専用キー（Shift有無で同じ挙動）
+        underscore_only: underscore_only {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            // 通常/Shift時ともに _
+            bindings = <&kp JP_UNDERSCORE>, <&kp JP_UNDERSCORE>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
     };
@@ -124,7 +227,7 @@
         default_layer {
             bindings = <
 &kp Q      &kp W      &kp E     &kp R                 &kp T                                                &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S      &kp D     &kp F                 &kp G        &kp LANGUAGE_1          &kp LANGUAGE_2  &kp H      &kp J  &kp K      &kp L    &kp SEMI
+&kp A      &kp S      &kp D     &kp F                 &kp G        &kp LANGUAGE_1          &kp LANGUAGE_2  &kp H      &kp J  &kp K      &kp L    &semicolon_plus
 &kp Z      &kp X      &kp C     &kp V                 &kp B        &kp TAB                 &kp LEFT_GUI    &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LSHFT  &kp LCTRL  &kp LALT  &lt 1 LS(INT_HENKAN)  &lt 3 SPACE  &lt 4 INT_MUHENKAN      &kp BACKSPACE   &kp ENTER                             &lt 4 ESCAPE
             >;
@@ -135,8 +238,8 @@
         FUNCTION {
             bindings = <
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                           &kp F6     &kp F7           &kp F8          &kp F9           &kp F10
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp ESCAPE      &trans   &kp MINUS  &backslash_pipe  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp F11
-&kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0  &trans          &trans   &kp TILDE  &kp SEMICOLON    &kp APOS        &kp BACKSLASH    &kp BACKSLASH
+&kp NUMBER_1  &number2_dquote  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp ESCAPE      &minus_equal   &caret_tilde  &backslash_pipe  &at_backquote  &lbracket_lbrace  &kp F11
+&number6_ampersand  &number7_quote  &number8_lparen  &number9_rparen  &kp N0  &trans          &trans   &trans  &semicolon_plus    &colon_asterisk  &rbracket_rbrace    &underscore_only
 &trans        &trans        &trans        &trans        &trans  &trans          &kp DEL  &trans                                                       &kp F12
             >;
         };
