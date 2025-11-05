@@ -29,7 +29,6 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
@@ -104,121 +103,163 @@
         };
 
         // 2 / " （JP配列では Shift+2 が "）
+
         number2_dquote: number2_dquote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_2>, <&kp JP_DQUOTE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // 6 / & （JP配列では Shift+6 が &）
+
         number6_ampersand: number6_ampersand {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_6>, <&kp JP_AMPERSAND>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // 7 / ' （JP配列では Shift+7 が '）
+
         number7_quote: number7_quote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_7>, <&kp JP_QUOTE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // 8 / ( （JP配列では Shift+8 が (）
+
         number8_lparen: number8_lparen {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_8>, <&kp JP_LPAREN>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // 9 / ) （JP配列では Shift+9 が )）
+
         number9_rparen: number9_rparen {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_9>, <&kp JP_RPAREN>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // 既存：US バックスラッシュ キーで ¥ / | を出す
+
         backslash_pipe: backslash_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // - / = （JP配列では Shift+Minus が =）
+
         minus_equal: minus_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常: - , Shift時: =
+
             bindings = <&kp MINUS>, <&kp JP_EQUAL>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // ^ / ~ （JP配列の「^/~」キー相当）
+
         caret_tilde: caret_tilde {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常: ^ , Shift時: ~
+
             bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // @ / ` （JP配列では @ と ` が同じキーに乗っている）
+
         at_backquote: at_backquote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常: @ , Shift時: `
+
             bindings = <&kp JP_AT>, <&kp JP_BACKQUOTE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // ; / + （JP配列では Shift+; が +）
+
         semicolon_plus: semicolon_plus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&kp JP_PLUS>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // : / * （JP配列の「:/*」キー相当）
+
         colon_asterisk: colon_asterisk {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常: : , Shift時: *
+
             bindings = <&kp JP_COLON>, <&kp JP_ASTERISK>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // [ / { （JP配列での [ / { のペア）
+
         lbracket_lbrace: lbracket_lbrace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常: [ , Shift時: {
+
             bindings = <&kp JP_LBRACKET>, <&kp JP_LBRACE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // ] / } （JP配列での ] / } のペア）
+
         rbracket_rbrace: rbracket_rbrace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常: ] , Shift時: }
+
             bindings = <&kp JP_RBRACKET>, <&kp JP_RBRACE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         // 必要なら、_ 専用キー（Shift有無で同じ挙動）
+
         underscore_only: underscore_only {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+
             // 通常/Shift時ともに _
+
             bindings = <&kp JP_UNDERSCORE>, <&kp JP_UNDERSCORE>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
@@ -227,6 +268,7 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
     };
@@ -236,10 +278,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W      &kp E     &kp R                 &kp T                                                &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S      &kp D     &kp F                 &kp G        &kp LANGUAGE_1          &kp LANGUAGE_2  &kp H      &kp J  &kp K      &kp L    &semicolon_plus
-&kp Z      &kp X      &kp C     &kp V                 &kp B        &kp TAB                 &kp LEFT_GUI    &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LSHFT  &kp LCTRL  &kp LALT  &lt 1 LS(INT_HENKAN)  &lt 3 SPACE  &lt 4 INT_MUHENKAN      &kp BACKSPACE   &kp ENTER                             &lt 4 ESCAPE
+&kp Q      &kp W      &kp E     &kp R                 &kp T                                                &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S      &kp D     &kp F                 &kp G        &kp LANGUAGE_1          &kp LANGUAGE_2  &kp H        &kp J  &kp K      &kp L    &semicolon_plus
+&kp Z      &kp X      &kp C     &kp V                 &kp B        &kp TAB                 &kp LEFT_GUI    &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LSHFT  &kp LCTRL  &kp LALT  &lt 1 LS(INT_HENKAN)  &lt 3 SPACE  &lt 4 INT_MUHENKAN      &kp BACKSPACE   &lt 1 ENTER                             &lt 4 ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -247,10 +289,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5                           &kp F6     &kp F7           &kp F8          &kp F9           &kp F10
-&kp NUMBER_1  &number2_dquote  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp ESCAPE      &minus_equal   &caret_tilde  &backslash_pipe  &at_backquote  &lbracket_lbrace  &kp F11
-&number6_ampersand  &number7_quote  &number8_lparen  &number9_rparen  &kp N0  &trans          &trans   &trans  &semicolon_plus    &colon_asterisk  &rbracket_rbrace    &underscore_only
-&trans        &trans        &trans        &trans        &trans  &trans          &kp DEL  &trans                                                       &kp F12
+&kp F1              &kp F2           &kp F3           &kp F4           &kp F5                                &kp F6        &kp F7           &kp F8           &kp F9            &kp F10
+&kp NUMBER_1        &number2_dquote  &kp NUMBER_3     &kp NUMBER_4     &kp N5  &kp ESCAPE      &minus_equal  &caret_tilde  &backslash_pipe  &at_backquote    &lbracket_lbrace  &kp F11
+&number6_ampersand  &number7_quote   &number8_lparen  &number9_rparen  &kp N0  &trans          &trans        &trans        &semicolon_plus  &colon_asterisk  &rbracket_rbrace  &underscore_only
+&trans              &trans           &trans           &trans           &trans  &trans          &kp DEL       &trans                                                            &kp F12
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -267,10 +309,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &kp LEFT     &kp DOWN_ARROW  &kp RIGHT      &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &kp HOME     &trans          &kp END        &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                              &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp LEFT     &kp DOWN  &kp RIGHT      &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &kp HOME     &trans    &kp END        &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -278,10 +320,10 @@
 
         MOUSE {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans  &trans    &trans    &trans    &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans  &trans  &trans    &trans    &trans
 &out OUT_TOG  &bt BT_CLR    &trans        &trans        &trans        &trans      &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2
-&trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                &trans
+&trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans    &trans    &trans
+&trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                              &trans
             >;
         };
 
