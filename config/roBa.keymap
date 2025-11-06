@@ -279,7 +279,7 @@
         default_layer {
             bindings = <
 &kp Q      &kp W      &kp E     &kp R                 &kp T                                                &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S      &kp D     &kp F                 &kp G        &kp LANGUAGE_1          &kp LANGUAGE_2  &kp H        &kp J  &kp K      &kp L    &semicolon_plus
+&kp A      &kp S      &kp D     &kp F                 &kp G        &kp JP_HANZEN          &minus_equal  &kp H        &kp J  &kp K      &kp L    &semicolon_plus
 &kp Z      &kp X      &kp C     &kp V                 &kp B        &kp TAB                 &kp LEFT_GUI    &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LSHFT  &kp LCTRL  &kp LALT  &lt 1 LS(INT_HENKAN)  &lt 3 SPACE  &lt 4 INT_MUHENKAN      &kp BACKSPACE   &lt 1 ENTER                             &lt 4 ESCAPE
             >;
@@ -290,7 +290,7 @@
         FUNCTION {
             bindings = <
 &kp F1              &kp F2           &kp F3           &kp F4           &kp F5                                &kp F6        &kp F7           &kp F8           &kp F9            &kp F10
-&kp NUMBER_1        &number2_dquote  &kp NUMBER_3     &kp NUMBER_4     &kp N5  &kp ESCAPE      &minus_equal  &caret_tilde  &backslash_pipe  &at_backquote    &lbracket_lbrace  &kp F11
+&kp NUMBER_1        &number2_dquote  &kp NUMBER_3     &kp NUMBER_4     &kp N5  &kp ESCAPE      &trans  &caret_tilde  &backslash_pipe  &at_backquote    &lbracket_lbrace  &kp F11
 &number6_ampersand  &number7_quote   &number8_lparen  &number9_rparen  &kp N0  &trans          &trans        &trans        &semicolon_plus  &colon_asterisk  &rbracket_rbrace  &underscore_only
 &trans              &trans           &trans           &trans           &trans  &trans          &kp DEL       &trans                                                            &kp F12
             >;
